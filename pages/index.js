@@ -23,7 +23,7 @@ export default function Home() {
     }
   };
 
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handlePageResized = () => {
