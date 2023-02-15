@@ -6,7 +6,7 @@ import styles from '@/styles/Home.module.css'
 import { Button, Flex, HStack, Center, Box, Text, Icon, Heading, Image, VStack } from '@chakra-ui/react'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import { useState, useEffect } from 'react'
-// import {isMobile} from 'react-device-detect';
+import {isMobile} from 'react-device-detect';
 // import checkMobile from '@/components/checkMobile'
 
 const mont = Montserrat({weight:['500', '700'], subsets: ['latin'] })
@@ -15,38 +15,7 @@ const fraunces = Fraunces({ weight:'700', subsets: ['latin'] })
 
 
 export default function Home() {
-  const checkForDevice = () =>{
-    if(typeof window !== 'undefined'){
-      window.innerWidth <= 375
-    }else{
-      false
-    }
-  };
-
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handlePageResized = () => {
-      setIsMobile(checkForDevice());
-    };
-    console.log(typeof window)
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', handlePageResized);
-      window.addEventListener('orientationchange', handlePageResized);
-      window.addEventListener('load', handlePageResized);
-      window.addEventListener('reload', handlePageResized);
-    }
-
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handlePageResized);
-        window.removeEventListener('orientationchange', handlePageResized);
-        window.removeEventListener('load', handlePageResized);
-        window.removeEventListener('reload', handlePageResized);
-      }
-    };
-  }, [isMobile]);
-  console.log(isMobile)
+  
   return (
     <>
       <Head>
