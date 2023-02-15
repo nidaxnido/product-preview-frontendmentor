@@ -6,7 +6,8 @@ import styles from '@/styles/Home.module.css'
 import { Button, Flex, HStack, Center, Box, Text, Icon, Heading, Image, VStack } from '@chakra-ui/react'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import { useState, useEffect } from 'react'
-import {isMobile} from 'react-device-detect';
+// import {isMobile} from 'react-device-detect';
+import {useMediaQuery} from 'react-responsive'
 // import checkMobile from '@/components/checkMobile'
 
 const mont = Montserrat({weight:['500', '700'], subsets: ['latin'] })
@@ -15,7 +16,7 @@ const fraunces = Fraunces({ weight:'700', subsets: ['latin'] })
 
 
 export default function Home() {
-  
+  const isMobile =  useMediaQuery({ query: '(max-width: 375px)' })
   return (
     <>
       <Head>
@@ -43,12 +44,12 @@ export default function Home() {
                 alignItems='left'
                 >
               <Text letterSpacing='3px' color='hsl(228, 12%, 48%)' fontSize='11px'>PERFUME</Text>
-              <Heading className={fraunces.className}
+              <Text className={fraunces.className}
                     color='hsl(212, 21%, 14%)'
                     lineHeight={1}
                     fontWeight='bolder'
                     mt={0}
-                >Gabrielle Essence Eau De Parfum</Heading>
+                >Gabrielle Essence Eau De Parfum</Text>
               <Text color='hsl(228, 12%, 48%)' fontSize='11px' lineHeight='18px'>A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</Text>
               <HStack>
                 <Text className={fraunces.className} color='hsl(158, 36%, 37%)' fontSize={26}>$149.99</Text>
@@ -84,13 +85,13 @@ export default function Home() {
                 alignItems='left'
                 >
               <Text letterSpacing='3px' color='hsl(228, 12%, 48%)' fontSize='11px'>PERFUME</Text>
-              <Heading className={fraunces.className}
+              <Text className={fraunces.className}
                     color='hsl(212, 21%, 14%)'
                     lineHeight={1}
                     fontWeight='bolder'
                     fontSize='26px'
                     pr='20px'
-                >Gabrielle Essence Eau De Parfum</Heading>
+                >Gabrielle Essence Eau De Parfum</Text>
               <Text color='hsl(228, 12%, 48%)' fontSize='11px' lineHeight='18px'>A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</Text>
               <HStack>
                 <Text className={fraunces.className} color='hsl(158, 36%, 37%)' fontSize={26}>$149.99</Text>
